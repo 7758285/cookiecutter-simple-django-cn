@@ -20,9 +20,9 @@ and to localize.
 * Install `cookiecutter` command line: `pip install cookiecutter`
 
 # Usage(如何使用)
-Generate a new Cookiecutter template layout: `cookiecutter gh:shenyushun/cookiecutter-simple-django-cn`
+Generate a new Cookiecutter template layout: `cookiecutter gh:7758285/cookiecutter-simple-django-cn`
 
-安装依赖后执行`cookiecutter gh:shenyushun/cookiecutter-simple-django-cn`
+安装依赖后执行`cookiecutter gh:7758285/cookiecutter-simple-django-cn`
 
 # License(许可)
 This project is licensed under the terms of the [MIT License](/LICENSE)
