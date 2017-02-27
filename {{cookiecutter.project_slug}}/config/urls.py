@@ -7,13 +7,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+import debug_toolbar
 
 urlpatterns = [
-    # Django Admin, use {% raw %}{% url 'admin:index' %}{% endraw %}
-    url(settings.ADMIN_URL, include(admin.site.urls)),
-    # Your stuff: custom urls includes go here
+                  # Django Admin, use {% raw %}{% url 'admin:index' %}{% endraw %}
+                  url(settings.ADMIN_URL, include(admin.site.urls)),
+                  # Your stuff: custom urls includes go here
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
@@ -26,4 +27,8 @@ if settings.DEBUG:
         url(r'^404/$', default_views.page_not_found,
             kwargs={'exception': Exception('Page not Found')}),
         url(r'^500/$', default_views.server_error),
+    ]
+
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
     ]
